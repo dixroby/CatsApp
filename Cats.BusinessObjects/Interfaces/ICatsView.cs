@@ -1,4 +1,4 @@
-﻿namespace Cats.BusinessObjects.Intefaces
+﻿namespace Cats.BusinessObjects.Interfaces
 {
     public interface ICatsView
     {

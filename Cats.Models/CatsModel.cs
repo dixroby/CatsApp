@@ -1,18 +1,17 @@
 ﻿using System.Net.Http.Json;
 
-namespace Cats.Models
+namespace Cats.Models;
+public class CatsModel : ICatsModel
 {
-    public class CatsModel : ICatsModel
+    readonly HttpClient Client;
+    readonly CatsEndpoints Endpoints;
+
+    public CatsModel(HttpClient client, CatsEndpoints endpoints)
     {
-        readonly HttpClient Client;
-        readonly CatsEndpoints Endpoints;
-        public CatsModel(HttpClient client, CatsEndpoints endpoints)
-        {
-            Endpoints = endpoints;
-            Client = client;
-        }
-        public async Task<IReadOnlyCollection<Cat>> GetCatsAsync() =>
-            await Client.GetFromJsonAsync<IReadOnlyCollection<Cat>>(Endpoints.Cats);
-        
+        Client = client;
+        Endpoints = endpoints;
     }
+
+    public async Task<IReadOnlyCollection<Cat>> GetCatsAsync() =>
+        await Client.GetFromJsonAsync<IReadOnlyCollection<Cat>>(Endpoints.Cats);
 }

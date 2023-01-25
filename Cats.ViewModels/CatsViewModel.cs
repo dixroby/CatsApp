@@ -1,6 +1,6 @@
 ﻿namespace Cats.ViewModels
 {
-    internal class CatsViewModel : ICatsViewModel
+    public class CatsViewModel : ICatsViewModel
     {
         readonly ICatsModel Model;
         public IReadOnlyCollection<Cat> Cats { get; private set; }

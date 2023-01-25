@@ -1,6 +1,2 @@
-﻿namespace Cats.BusinessObjects.ValueObjects
-{
-    public record struct CatsEndpoints(string Cats)
-    {
-    }
-}
+﻿namespace Cats.BusinessObjects.ValueObjects;
+public record struct CatsEndpoints(string Cats);
